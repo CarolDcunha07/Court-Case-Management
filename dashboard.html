@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COURT DASHBOARD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('backg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .dashboard {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 0 10px;
+        }
+        .section-box {
+            flex: 1;
+            width: 300px; /* Adjust the width as needed */
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 0 auto; /* Center the boxes horizontally */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center contents vertically within each box */
+        }
+        .section-box img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .section-links {
+            list-style: none;
+            padding: 0;
+        }
+        .section-links li {
+            margin: 10px 0;
+        }
+        .notifications {
+            background-color: #ffc5c5;
+            padding: 10px;
+            border: 1px solid #ff3333;
+            border-radius: 5px;
+            color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>COURT DASHBOARD</h1>
+    </header>
+    <div class="dashboard">
+        <div class="section-container">
+            <div class="section-box">
+                <img src="overview.jpg" alt="Overview">
+                <div>
+                    <div class="section-title">OVERVIEW</div>
+                    <p>Overview content here...</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="section-box">
+                <img src="quicklinks.jpg" alt="Quick Links">
+                <div>
+                    <div class="section-title">QUICK LINKS</div>
+                    <ul class="section-links">
+                        <li><a href="#">View All Cases</a></li>
+                        <li><a href="#">Hearing Schedule</a></li>
+                        <li><a href="#">Court Personnel</a></li>
+                        <li><a href="#">Documents and Evidence</a></li>
+                        <li><a href="#">Reports and Analytics</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="section-box">
+                <img src="importantAnnouncement.jpg" alt="Announcements">
+                <div>
+                    <div class="section-title">ANNOUNCEMENTS</div>
+                    <div class="notifications">
+                        <p>ATTENTION!!! : Important notification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
