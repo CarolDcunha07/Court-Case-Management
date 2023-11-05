@@ -1,0 +1,64 @@
+
+
+body {
+    background-image: url('casemanagement.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0; 
+    font-family: 'Arial', sans-serif; 
+  }
+  
+  #caseManagementBox {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #caseManagement {
+    margin-bottom: 20px;
+  }
+  
+  #caseList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .caseItem {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .caseItem:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  #filterOptions {
+    margin-top: 20px;
+  }
+  
+#addNewCaseButton{
+    margin-top: 30px;
+}  
+  #detailedCaseModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  #closeModalButton {
+    margin-top: 10px;
+  }
+  
+  

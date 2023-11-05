@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="casemanagement.css">
+  <title>Court Database Management System</title>
+</head>
+
+<body>
+  <div id="caseManagementBox">
+    <h1>Case Management</h1>
+
+    <div id="caseManagement">
+      <ul id="caseList">
+      </ul>
+
+      <div id="filterOptions">
+        <label for="caseNumber">Case Number:</label>
+        <input type="text" id="caseNumber">
+
+        <label for="status">Status:</label>
+        <select id="status">
+          <option value="open">Open</option>
+          <option value="closed">Closed</option>
+        </select>
+
+        <label for="status">Type:</label>
+        <select id="status">
+          <option value="Civil">Civil</option>
+          <option value="Criminal">Criminal</option>
+        </select>
+
+
+        <button id="searchButton">Search</button>
+      </div>
+
+      <button id="addNewCaseButton">Add New Case</button>
+    </div>
+  </div>
+
+  <div id="detailedCaseModal">
+    <button id="closeModalButton">Close</button>
+  </div>
+
+</body>
+
+</html>
