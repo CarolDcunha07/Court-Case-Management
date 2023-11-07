@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COURT DASHBOARD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('backgg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center both horizontally and vertically */
+            height: 100vh; /* Full viewport height */
+        }
+        .dashboard {
+            display: flex;
+        }
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .section-box {
+            width: 400px; /* Make the boxes larger */
+            height: 300px; /* Make the boxes taller */
+            margin: 0 10px; /* Add margin to create spacing between boxes */
+            background-color: white; /* Set the background color to white */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
+        }
+        .section-box .circle {
+            width: 150px; /* Size of the circle */
+            height: 150px; /* Size of the circle */
+            background-color: #3498db;
+            border-radius: 50%; /* Create a circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .section-box img {
+            width: 100%; /* Make the image fill the circle */
+            height: 100%; /* Make the image fill the circle */
+            border-radius: 50%; /* Make the image circular */
+        }
+        .section-title {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .section-links {
+            list-style: none;
+            padding: 0;
+        }
+        .section-links li {
+            margin: 10px 0;
+        }
+        .notifications {
+            background-color: #ffc5c5;
+            padding: 10px;
+            border: 1px solid #ff3333;
+            border-radius: 5px;
+            color: #ff3333;
+        }
+        .arrow-link {
+            display: flex;
+            align-items: center;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .arrow-link:before {
+            content: '➔';
+            margin-right: 5px;
+        }
+         .section-container:nth-child(2) .section-title {
+            font-size: 30px; /* Make the title bigger */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>COURT DASHBOARD</h1>
+    </header>
+    <div class="container">
+        <div class="dashboard" style="margin-top: 20px;">
+            <div class="section-container">
+                <div class="section-box">
+                    <div class="circle">
+                        <img src="cases.jpg" alt="Overview"> 
+                    </div>
+                    <div>
+                        <div class="section-title">VIEW ALL CASES</div>
+                        <p>List of all cases currently in the court.</p>
+                        <a href="casemanagement.html" class="arrow-link">Cases</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="section-box">
+                    <div class="circle">
+                        <img src="schedule.jpg" alt="Quick Links"> 
+                    </div>
+                    <div>
+                        <div class "section-title">HEARING SCHEDULE</div>
+                        <p>Check the schedule for upcoming court hearings.</p>
+                        <a href="hearings.html" class="arrow-link">Hearing Schedule</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="section-box">
+                    <div class="circle">
+                        <img src="announce.jpg" alt="Announcements"> 
+                    </div>
+                    <div>
+                        <div class="section-title">    ANNOUNCEMENTS</div>
+                        <div class="notifications">
+                            <p>ATTENTION!!! : Important notification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
