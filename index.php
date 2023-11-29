@@ -1,57 +1,64 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; // Add your MySQL password here if you have set any
-$dbname = "login_sample_db1"; // You can change this to your desired database name
+$password = ""; 
+$dbname = "login_sample_db1"; 
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if the register form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
-    $user_id = $_POST["userId"];
-    $password = $_POST["password"];
+  $userId = $_POST["userId"];
+  $password = $_POST["password"];
+
+  $sql = "SELECT * FROM users WHERE user_id='$userId'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    echo "<small style='color: red'>User already exists.</small>";
+  } else {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (user_id, password) VALUES ('$user_id', '$hashedPassword')";
+    $sql = "INSERT INTO users (user_id, password) VALUES ('$userId', '$hashedPassword')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Registration successful!";
+      echo "<small style='color: green'>Registration successful!</small>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+      echo "<small style='color: red'>Error: " . $sql . "<br>" . $conn->error . "</small>";
     }
+  }
 }
 
-// Check if the login form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
-    $user_id = $_POST["userId"];
-    $password = $_POST["password"];
+  $userId = $_POST["userId"];
+  $password = $_POST["password"];
 
-    $sql = "SELECT * FROM users WHERE user_id='$user_id'";
-    $result = $conn->query($sql);
+  $sql = "SELECT * FROM users WHERE user_id='$userId'";
+  $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row["password"])) {
-            echo "Login successful!";
-            // Redirect to the dashboard or home page
-            header("Location: dashboard.html");
-            exit();
-        } else {
-            echo "Incorrect password";
-        }
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+
+    if ($password==$row["password"]) {
+      echo "<small style='color: green'>Login successful!</small>";
+
+      header("Location: dashboard.html");
+      exit();
     } else {
-        echo "User not found";
+      echo "<small style='color: red'>Incorrect password.</small>";
     }
+  } else {
+    echo "<small style='color: red'>User not found.</small>";
+  }
 }
 
 $conn->close();
 ?>
+
+
 
 <html>
 <head>
@@ -107,11 +114,9 @@ $conn->close();
     }
 
     registerButton.addEventListener("click", function () {
-        // Redirect the user to the login form
         window.location.href = "#login";
     });
 
-    // Remove the login form submit event listener
 </script>
 
 </body>
